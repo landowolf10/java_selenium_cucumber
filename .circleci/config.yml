@@ -20,15 +20,16 @@ jobs:
             sudo mv ~/bin/chromedriver /usr/local/bin/chromedriver
             sudo chmod +x /usr/local/bin/chromedriver
             chmod +x gradlew
-            chmod +x /home/circleci/project/src/main/java/framework/drivers/chromedriver
+            chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
+            chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test
       - store_artifacts:
-          path: src/main/java/project/reports
+          path: test-output/HtmlReport
           destination: cucumber-reports
       - store_test_results:
-          path: src/main/java/project/reports
+          path: test-output/HtmlReport
 
 workflows:
   version: 2
