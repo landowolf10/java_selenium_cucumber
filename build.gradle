@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.9.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.9.0'
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    implementation group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
+    implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.14.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(Test).configureEach {
+    testLogging {
+        events "standardOut", "started", "passed", "skipped", "failed"
+    }
+}
+
+test {
+    // Configure parallel execution
+    maxParallelForks = 10 // Adjust the number of parallel forks as needed
+    forkEvery = 1
+}
