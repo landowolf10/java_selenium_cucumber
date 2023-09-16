@@ -9,4 +9,3 @@ Feature: Successful login
     Examples:
       | browser |
       | Chrome  |
-      | Firefox |
