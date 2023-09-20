@@ -42,6 +42,7 @@ public class Clients
         if (browser.equalsIgnoreCase("Chrome")) {
             System.setProperty("chromeDriver", ConstantData.chromeDriverPath);
             ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setCapability("browserVersion", "114.0.5735.90");
             chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
