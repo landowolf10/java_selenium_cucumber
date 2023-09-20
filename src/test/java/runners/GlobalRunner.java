@@ -6,7 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/checkout/checkout.feature",
+        features = {
+                "src/test/resources/features/login/login.feature",
+                "src/test/resources/features/login/invalid_login.feature",
+                "src/test/resources/features/checkout/checkout.feature"
+        },
         glue = "steps",
         plugin = {
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

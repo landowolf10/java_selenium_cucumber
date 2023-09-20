@@ -49,7 +49,7 @@ public class Clients
         else if (browser.equalsIgnoreCase("Firefox")) {
             System.setProperty("geckoDriver", ConstantData.geckoDriverPath);
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            //firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
 

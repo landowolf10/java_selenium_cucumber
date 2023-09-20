@@ -29,7 +29,7 @@ jobs:
           path: test-output/HtmlReport
           destination: extent-reports
       - store_test_results:
-          path: test-output/HtmlReport 
+          path: test-output/HtmlReport
 
 workflows:
   version: 2
