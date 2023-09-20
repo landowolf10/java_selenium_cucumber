@@ -39,6 +39,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -48,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>sep. 8, 2023 05:37:45 p.�m.</span>
+			<span class='label blue darken-3 suite-start-time'>sept 20, 2023 10:55:10 a. m.</span>
 			</a>
 		</ul>
 	</div>
@@ -70,6 +71,16 @@
 			</div>
 			<!-- test toggle -->
 			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Login</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
 			<!-- category toggle -->
 			<!-- clear filters -->
 			<div class='chip transparent hide'>
@@ -108,7 +119,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='$100%'>
-                    <span class='strong'>1</span> features passed</span>
+                    <span class='strong'>3</span> features passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -126,7 +137,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>2</span> scenarios passed</span>
+                    <span class='strong'>8</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -146,7 +157,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>16</span> steps passed</span>
+                    <span class='strong'>40</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -176,7 +187,7 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Validate checkout flow on SwagLabs page</span>
-						<span class='test-time'>sep. 8, 2023 05:37:46 p.�m.</span>
+						<span class='test-time'>sept 20, 2023 10:55:11 a. m.</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -189,7 +200,7 @@
 
 <div class='scenario outline node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 16.676</span>
+	<span class='duration right label'>00 00 24.127</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Validate checkout flow</div>
 	</div>
@@ -280,6 +291,208 @@
 </div>
 					</div>
 				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>Invalid user login</span>
+						<span class='test-time'>sept 20, 2023 10:55:35 a. m.</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='40' status='pass'>
+
+	<span class='duration right label'>00 00 19.661</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Invalid user</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>user</td><td>password</td><td>browser</td></tr><tr><td>standard_use</td><td>secret_sauce</td><td>Chrome</td></tr><tr><td>standard_user</td><td>secretsauce</td><td>Chrome</td></tr><tr><td>standard_use</td><td>secret_sauce</td><td>Firefox</td></tr><tr><td>standard_user</td><td>secretsauce</td><td>Firefox</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='41' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Invalid user</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='42' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Chrome</h6>
+
+				</li>
+				<li test-id='44' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_use with password secret_sauce</h6>
+
+				</li>
+				<li test-id='46' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='48' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.invalidLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify user login was not successful</h6>
+
+				</li>
+			</ul>
+		</li>
+		<li test-id='51' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Invalid user</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='52' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Chrome</h6>
+
+				</li>
+				<li test-id='54' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_user with password secretsauce</h6>
+
+				</li>
+				<li test-id='56' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='58' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.invalidLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify user login was not successful</h6>
+
+				</li>
+			</ul>
+		</li>
+		<li test-id='61' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Invalid user</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='62' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Firefox</h6>
+
+				</li>
+				<li test-id='64' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_use with password secret_sauce</h6>
+
+				</li>
+				<li test-id='66' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='68' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.invalidLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify user login was not successful</h6>
+
+				</li>
+			</ul>
+		</li>
+		<li test-id='71' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Invalid user</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='72' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Firefox</h6>
+
+				</li>
+				<li test-id='74' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_user with password secretsauce</h6>
+
+				</li>
+				<li test-id='76' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='78' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.invalidLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify user login was not successful</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='81'>
+					<div class='test-heading'>
+						<span class='test-name'>Successful login</span>
+						<span class='test-time'>sept 20, 2023 10:55:55 a. m.</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='82' status='pass'>
+
+	<span class='duration right label'>00 00 07.467</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Validate successful login to Sauce Lab demo app</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>browser</td></tr><tr><td>Chrome</td></tr><tr><td>Firefox</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='83' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Validate successful login to Sauce Lab demo app</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Login</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='84' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Chrome</h6>
+
+				</li>
+				<li test-id='86' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_user with password secret_sauce</h6>
+
+				</li>
+				<li test-id='88' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='90' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.verifySuccessfulLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify that the user successfully logged in</h6>
+
+				</li>
+			</ul>
+		</li>
+		<li test-id='93' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Validate successful login to Sauce Lab demo app</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Login</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='94' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="steps.CommonSteps.navigate(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I navigate to SauceLab demo page Firefox</h6>
+
+				</li>
+				<li test-id='96' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.typeCredentials(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When type the username standard_user with password secret_sauce</h6>
+
+				</li>
+				<li test-id='98' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.pressLoginButton()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And press the login button</h6>
+
+				</li>
+				<li test-id='100' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="steps.LoginSteps.verifySuccessfulLogin()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify that the user successfully logged in</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -302,7 +515,72 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Login</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>sept 20, 2023 10:55:55 a. m.</td>
+										<td class='linked' test-id='83'>Validate successful login to Sauce Lab demo app</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>sept 20, 2023 10:55:58 a. m.</td>
+										<td class='linked' test-id='93'>Validate successful login to Sauce Lab demo app</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -310,37 +588,61 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>8</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>16</div>
+					<div class='panel-lead'>40</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>sep. 8, 2023 05:37:45 p.�m.</div>
+					<div class='panel-lead'>sept 20, 2023 10:55:10 a. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>sep. 8, 2023 05:38:02 p.�m.</div>
+			 		<div class='panel-lead'>sept 20, 2023 10:56:02 a. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 17.301</div>
+					<div class='panel-lead'>00 00 52.710</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@Login</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -351,23 +653,23 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 1,
-				passParent: 1,
+                parentCount: 3,
+				passParent: 3,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 2,
-				passChild: 2,
+				childCount: 8,
+				passChild: 8,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 16,
-				passGrandChild: 16,
+				grandChildCount: 40,
+				passGrandChild: 40,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -379,7 +681,7 @@
 		
 		<script>
 			var timeline = {
-			        "Validate checkout flow on SwagLabs page":16.68
+			        "Validate checkout flow on SwagLabs page":24.142,"Invalid user login":19.661,"Successful login":7.467
 			};
 		</script>
 		

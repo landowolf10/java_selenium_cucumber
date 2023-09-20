@@ -39,8 +39,15 @@ public class Clients
 
     private WebDriver createDriver(String browser)
     {
+        String os = System.getProperty("os.name");
+        System.out.println("OS: " + os);
+
         if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty("chromeDriver", ConstantData.chromeDriverPath);
+            if (os.contains("Windows"))
+                System.setProperty("chromeDriver", ConstantData.chromeDriverPathWindows);
+            else if (os.contains("Linux"))
+                System.setProperty("chromeDriver", ConstantData.chromeDriverPathLinux);
+
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setCapability("browserVersion", "114.0.5735.90");
             chromeOptions.addArguments("--remote-allow-origins=*");
@@ -48,8 +55,13 @@ public class Clients
             driver = new ChromeDriver(chromeOptions);
         }
         else if (browser.equalsIgnoreCase("Firefox")) {
-            System.setProperty("geckoDriver", ConstantData.geckoDriverPath);
+            if (os.contains("Windows"))
+                System.setProperty("geckoDriver", ConstantData.geckoDriverPathWindows);
+            else if (os.contains("Linux"))
+                System.setProperty("geckoDriver", ConstantData.geckoDriverPathLinux);
+
             FirefoxOptions firefoxOptions = new FirefoxOptions();
+            //firefoxOptions.setCapability("browserVersion", "114.0.5735.90");
             firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
