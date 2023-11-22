@@ -23,8 +23,8 @@ jobs:
             sudo chmod +x /usr/local/bin/chromedriver
 
             # Install Firefox and GeckoDriver
-            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
-            tar -xzf geckodriver-v0.33.0-linux64.tar.gz
+            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux-aarch64.tar.gz
+            tar -xzf geckodriver-v0.33.0-linux-aarch64.tar.gz
             sudo mv geckodriver /usr/local/bin/
             sudo chmod +x /usr/local/bin/geckodriver
             
@@ -33,9 +33,6 @@ jobs:
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
-            
-            /usr/bin/firefox --version
-
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
