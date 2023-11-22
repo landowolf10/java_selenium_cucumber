@@ -8,5 +8,7 @@ Feature: Invalid user login
     Examples:
       | user            | password      | browser |
       | standard_use    | secret_sauce  | Chrome  |
-      | standard_user    | secretsauce  | Chrome  |
+      | standard_user   | secretsauce   | Chrome  |
+      | standard_use    | secret_sauce  | Firefox |
+      | standard_user   | secretsauce   | Firefox |
 

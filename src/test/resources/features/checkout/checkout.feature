@@ -12,3 +12,4 @@ Feature: Validate checkout flow on SwagLabs page
     Examples:
       | browser |
       | Chrome  |
+      | Firefox |

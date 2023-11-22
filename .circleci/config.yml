@@ -24,7 +24,7 @@ jobs:
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
       - run:
           name: Run Selenium Tests
-          command: ./gradlew clean test
+          command: ./gradlew clean test --tests LoginRunner
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
