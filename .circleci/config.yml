@@ -19,7 +19,6 @@ jobs:
             wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64"
             sudo tar xjf firefox.tar.bz2 -C /opt/
             sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
-            firefox --version
             
             sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
             echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
@@ -32,19 +31,17 @@ jobs:
             sudo chmod +x /usr/local/bin/chromedriver
 
             # Install Firefox and GeckoDriver
-            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
-            tar -xzf geckodriver-v0.32.0-linux64.tar.gz
+            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
+            tar -xzf geckodriver-v0.33.0-linux64.tar.gz
             sudo mv geckodriver /usr/local/bin/
             sudo chmod +x /usr/local/bin/geckodriver
             
-            
+            cd /usr/local/bin/
+            ls
             
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
-            
-            cd /home/circleci/project/src/test/resources/drivers
-            ls
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
