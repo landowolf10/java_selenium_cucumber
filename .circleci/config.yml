@@ -23,7 +23,7 @@ jobs:
             sudo chmod +x /usr/local/bin/chromedriver
 
             # Install Firefox and GeckoDriver
-            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.32.2-linux64.tar.gz
+            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.32.2/geckodriver-v0.32.2-linux64.tar.gz
             tar -xzf geckodriver-v0.32.2-linux64.tar.gz
             sudo mv geckodriver /usr/local/bin/
             sudo chmod +x /usr/local/bin/geckodriver
