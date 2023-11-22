@@ -41,6 +41,9 @@ jobs:
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
+            
+            cd /home/circleci/project/src/test/resources/drivers
+            ls
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
