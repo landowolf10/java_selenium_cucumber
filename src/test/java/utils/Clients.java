@@ -61,7 +61,6 @@ public class Clients
                 System.setProperty("geckoDriver", ConstantData.geckoDriverPathLinux);
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            //firefoxOptions.setCapability("browserVersion", "114.0.5735.90");
             firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }

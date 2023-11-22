@@ -34,7 +34,8 @@ jobs:
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
             
-            apt list --installed | grep firefox
+            /usr/bin/firefox --version
+
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
