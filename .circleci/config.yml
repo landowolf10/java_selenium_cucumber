@@ -12,32 +12,32 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            uname -m
-            
             sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
             echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
             sudo apt-get update && sudo apt-get install -y google-chrome-stable
-            
+
             # Download and set up ChromeDriver
             wget -N https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
             unzip chromedriver_linux64.zip -d ~/bin
             sudo mv ~/bin/chromedriver /usr/local/bin/chromedriver
             sudo chmod +x /usr/local/bin/chromedriver
-
-            # Install Firefox and GeckoDriver
-            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux32.tar.gz
-            tar -xzf geckodriver-v0.33.0-linux32.tar.gz
+            
+            # Download and set up GeckoDriver (already done)
+            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
+            tar -xzf geckodriver-v0.33.0-linux64.tar.gz
             sudo mv geckodriver /usr/local/bin/
             sudo chmod +x /usr/local/bin/geckodriver
-            
-            
             
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
       - run:
-          name: Run Selenium Tests
-          command: ./gradlew clean test --tests LoginRunner
+          name: Run Selenium Tests with Chrome
+          command: ./gradlew clean test --tests LoginRunner -Dbrowser=chrome
+      - run:
+          name: Run Selenium Tests with Firefox (Headless)
+          command: |
+            ./gradlew clean test --tests LoginRunner -Dbrowser=firefoxHeadless
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
