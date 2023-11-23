@@ -63,7 +63,7 @@ public class Clients
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
-            firefoxOptions.setBinary("/usr/local/bin");
+            firefoxOptions.setBinary("/usr/local/bin/");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
