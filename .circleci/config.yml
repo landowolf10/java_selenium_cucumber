@@ -32,7 +32,7 @@ jobs:
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
             
-            cd /usr/local/bin/
+            cd /usr/local/bin
             ls
       - run:
           name: Run Selenium Tests
