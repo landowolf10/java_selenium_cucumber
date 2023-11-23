@@ -59,7 +59,7 @@ public class Clients
             if (os.contains("Windows"))
                 System.setProperty("webdriver.gecko.driver", ConstantData.geckoDriverPathWindows);
             else if (os.contains("Linux"))
-                System.setProperty("webdriver.gecko.driver", ConstantData.geckoDriverPathLinux);
+                System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
