@@ -2,11 +2,11 @@ version: 2.1
 executors:
   default:
     docker:
-      - image: circleci/openjdk:11-jdk
+      - image: circleci/openjdk:11-jdk-browsers
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:11-jdk
+      - image: circleci/openjdk:11-jdk-browsers
     steps:
       - checkout
       - run:
@@ -23,10 +23,10 @@ jobs:
             sudo chmod +x /usr/local/bin/chromedriver
 
             # Install GeckoDriver
-            wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz &&
-            tar -xvzf geckodriver* &&
-            chmod +x geckodriver &&
-            sudo mv geckodriver /usr/local/bin
+            wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
+            tar -xzf geckodriver-v0.33.0-linux64.tar.gz
+            sudo mv geckodriver /usr/local/bin/
+            sudo chmod +x /usr/local/bin/geckodriver
             
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
