@@ -19,6 +19,8 @@ jobs:
             # Download and set up ChromeDriver
             wget -N https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
             unzip chromedriver_linux64.zip -d ~/bin
+            sudo mv ~/bin/chromedriver /usr/local/bin/chromedriver
+            sudo chmod +x /usr/local/bin/chromedriver
 
             # Install GeckoDriver
             wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
@@ -27,7 +29,7 @@ jobs:
             sudo chmod +x /usr/local/bin/geckodriver
             
             chmod +x gradlew
-            chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
+            #chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
             
             cd /usr/local/bin/
