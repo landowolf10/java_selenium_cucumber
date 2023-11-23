@@ -63,7 +63,7 @@ public class Clients
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
-            firefoxOptions.setBinary("/usr/local/bin/geckodriver");
+            firefoxOptions.setBinary("/home/circleci/project/src/test/resources/drivers/geckodriver");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
