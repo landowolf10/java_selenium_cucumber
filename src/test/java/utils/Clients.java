@@ -63,7 +63,7 @@ public class Clients
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
-            //firefoxOptions.setBinary(ConstantData.geckoDriverPathLinux);
+            firefoxOptions.setBinary("/usr/local/bin/geckodriver");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
