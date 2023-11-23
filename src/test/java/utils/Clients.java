@@ -45,9 +45,9 @@ public class Clients
 
         if (browser.equalsIgnoreCase("Chrome")) {
             if (os.contains("Windows"))
-                System.setProperty("chromeDriver", ConstantData.chromeDriverPathWindows);
+                System.setProperty("webdriver.chrome.driver", ConstantData.chromeDriverPathWindows);
             else if (os.contains("Linux"))
-                System.setProperty("chromeDriver", ConstantData.chromeDriverPathLinux);
+                System.setProperty("webdriver.chrome.driver", ConstantData.chromeDriverPathLinux);
 
             ChromeOptions chromeOptions = new ChromeOptions();
             //chromeOptions.setCapability("browserVersion", "114.0.5735.90");
