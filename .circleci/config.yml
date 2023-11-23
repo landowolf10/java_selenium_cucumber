@@ -12,13 +12,11 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            sudo apt-get update
-            sudo apt-get install -y curl wget tar unzip
-
-            # Download and Install Firefox
-            wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64"
-            sudo tar xjf firefox.tar.bz2 -C /opt/
-            sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
+            sudo apt-get remove firefox-mozilla-build binutils &&
+            sudo sh -c "echo 'deb http://ftp.hr.debian.org/debian sid main' >> /etc/apt/sources.list" &&
+            sudo apt-get update &&
+            sudo apt-get install -t sid firefox &&
+            firefox --version
             
             sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
             echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
@@ -30,7 +28,7 @@ jobs:
             sudo mv ~/bin/chromedriver /usr/local/bin/chromedriver
             sudo chmod +x /usr/local/bin/chromedriver
 
-            # Install Firefox and GeckoDriver
+            # Install GeckoDriver
             wget -N https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz
             tar -xzf geckodriver-v0.33.0-linux64.tar.gz
             sudo mv geckodriver /usr/local/bin/
