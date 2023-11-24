@@ -52,6 +52,9 @@ jobs:
           path: /home/circleci/project/build/allure-report
       - store_test_results:
           path: test-output/HtmlReport
+      - run:
+          name: Serve Allure report
+          command: allure serve build/allure-results
 
 workflows:
   version: 2
