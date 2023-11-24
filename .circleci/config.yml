@@ -31,30 +31,14 @@ jobs:
             chmod +x gradlew
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
-            
-            # Install Allure
-            wget -O /tmp/allure.zip https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.1/allure-commandline-2.23.1.zip
-            unzip /tmp/allure.zip -d /tmp
-            sudo mv /tmp/allure-2.23.1 /opt/allure
-            echo 'export PATH=$PATH:/opt/allure/bin' >> $BASH_ENV
-            source $BASH_ENV
-            allure --version  # Verify Allure installationn
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
-      - run:
-          name: Generate Allure report
-          command: |
-            allure generate build/allure-results -o build/allure-report
-            cd /home/circleci/project
-            ls
       - store_artifacts:
-          path: /home/circleci/project/build/allure-report
+          path: test-output/HtmlReport
+          destination: extent-reports
       - store_test_results:
           path: test-output/HtmlReport
-      - run:
-          name: Serve Allure report
-          command: allure serve build/allure-report
 
 workflows:
   version: 2
