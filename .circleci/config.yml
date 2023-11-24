@@ -45,7 +45,7 @@ jobs:
           command: ./gradlew clean test --tests LoginRunner
       - run:
           name: Generate Allure report
-          command: ./gradlew allureReport
+          command: allure serve build/allure-results
       - run:
           name: Serve Allure Report
           command: /tmp/allure-2.23.1/bin/allure serve src/main/java/project/reports
