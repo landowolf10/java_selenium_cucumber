@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.11.0'
 }
 
 group = 'org.example'
@@ -21,7 +20,7 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
     implementation group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
     implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.14.0'
-    implementation 'io.qameta.allure:allure-junit4:2.19.0'
+    implementation 'io.qameta.allure:allure-junit5:2.23.12'
 }
 
 test {
@@ -38,4 +37,16 @@ test {
     // Configure parallel execution
     maxParallelForks = 10 // Adjust the number of parallel forks as needed
     forkEvery = 1
+}
+
+// Task to generate the Allure report
+task generateAllureReport(type: Test) {
+    useJUnitPlatform()
+    finalizedBy 'allureReport'
+}
+
+// Define the Allure report task
+task allureReport(type: Exec) {
+    dependsOn generateAllureReport
+    commandLine 'allure', 'generate', '--clean', '-o', "$buildDir/allure-results", '--results-directory', "$buildDir/test-results"
 }
