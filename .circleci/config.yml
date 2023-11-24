@@ -46,10 +46,10 @@ jobs:
           name: Generate Allure report
           command: |
             allure generate build/allure-results -o build/allure-report
-            cd /home/circleci/project/build
+            cd /home/circleci/project
             ls
       - store_artifacts:
-          path: /home/circleci/project/allure-report
+          path: /home/circleci/project/build/allure-report
       - store_test_results:
           path: test-output/HtmlReport
 
