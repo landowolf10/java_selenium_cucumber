@@ -32,10 +32,9 @@ jobs:
             chmod +x /home/circleci/project/src/test/resources/drivers/chromedriver
             chmod +x /home/circleci/project/src/test/resources/drivers/geckodriver
             
-            # Install Allure
             wget -O /tmp/allure.zip https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.1/allure-commandline-2.23.1.zip
             unzip /tmp/allure.zip -d /tmp
-            export PATH="$PATH:/tmp/allure-2.23.1/bin"
+            sudo mv /tmp/allure-2.23.1/bin/allure /usr/local/bin/allure
             allure --version  # Verify Allure installation
       - run:
           name: Run Selenium Tests
