@@ -54,7 +54,7 @@ jobs:
           path: test-output/HtmlReport
       - run:
           name: Serve Allure report
-          command: allure serve build/allure-results
+          command: allure serve build/allure-report
 
 workflows:
   version: 2
