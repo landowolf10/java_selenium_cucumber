@@ -35,7 +35,7 @@ jobs:
             # Install Allure
             wget -O /tmp/allure.zip https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.1/allure-commandline-2.23.1.zip
             unzip /tmp/allure.zip -d /tmp
-            sudo mv /tmp/allure-2.23.1/bin/allure /usr/bin/allure
+            export PATH="$PATH:/tmp/allure-2.23.1/bin"
             allure --version  # Verify Allure installation
       - run:
           name: Run Selenium Tests
