@@ -42,7 +42,7 @@ jobs:
           command: |
               sudo npm install -g allure-commandline
               allure generate --clean
-            when: always
+          when: always
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
