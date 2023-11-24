@@ -39,6 +39,9 @@ jobs:
             echo 'export PATH=$PATH:/opt/allure/bin' >> $BASH_ENV
             source $BASH_ENV
             allure --version  # Verify Allure installationn
+            
+            cd /home/circleci/project
+            ls
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
