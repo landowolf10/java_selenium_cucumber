@@ -10,9 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Accept suite changes
-          command: sudo apt-get --allow-releaseinfo-change update
-      - run:
           name: Install Dependencies
           command: |
             sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -38,19 +35,24 @@ jobs:
             cd /usr/local/bin
             ls
       - run:
+          name: Install Allure
+          command: |
+            wget -O /tmp/allure.zip https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.1/allure-commandline-2.23.1.zip
+            unzip /tmp/allure.zip -d /tmp
+            export PATH="$PATH:/tmp/allure-2.23.1/bin"
+      - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
       - run:
-          name: Install Node.js and npm
+          name: Install Allure
           command: |
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-            sudo apt-get install -y nodejs
+            wget -O /tmp/allure.zip https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.1/allure-commandline-2.23.1.zip
+            unzip /tmp/allure.zip -d /tmp
+            export PATH="$PATH:/tmp/allure-2.23.1/bin"
       - run:
-          name: Generate allure report
-          command: |
-              sudo npm install -g allure-commandline
-              allure generate --clean
-          when: always
+          name: Serve Allure Report
+          command: /tmp/allure-2.23.1/bin/allure serve src/main/java/project/reports
+
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
