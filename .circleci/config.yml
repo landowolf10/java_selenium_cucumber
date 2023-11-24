@@ -37,6 +37,12 @@ jobs:
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
+      - run:
+          name: Generate allure report
+          command: |
+              sudo npm install -g allure-commandline
+              allure generate --clean
+            when: always
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
