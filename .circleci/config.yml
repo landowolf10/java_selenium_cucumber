@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Accept suite changes
+          command: sudo apt-get --allow-releaseinfo-change update
+      - run:
           name: Install Dependencies
           command: |
             sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
