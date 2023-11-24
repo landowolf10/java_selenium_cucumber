@@ -34,6 +34,11 @@ jobs:
       - run:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
+      - run:
+          name: Modify report CSS
+          command: |
+            cd /home/circleci/project/test-output
+            ls
       - store_artifacts:
           path: test-output/HtmlReport
           destination: extent-reports
