@@ -38,6 +38,11 @@ jobs:
           name: Run Selenium Tests
           command: ./gradlew clean test --tests LoginRunner
       - run:
+          name: Install Node.js and npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+      - run:
           name: Generate allure report
           command: |
               sudo npm install -g allure-commandline
