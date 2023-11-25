@@ -16,8 +16,8 @@ import utils.BasePage;
         },
         glue = "steps",
         plugin = {
-                //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                //"json:target/cucumber-report.json"
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "json:target/cucumber-report.json",
                 "pretty", "html:src/test/resources/reports/html/report.html",
                 "json:src/test/resources/reports/json/report.json",
                 "junit:src/test/resources/reports/junit/report.xml"
