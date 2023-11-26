@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Modify report CSS
           command: |
-            sed -i 's/http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css/extent.css/g' /home/circleci/project/test-output/HtmlReport/ExtentHtml.html
+            sed -i 's#http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css#extent.css#g' /home/circleci/project/test-output/HtmlReport/ExtentHtml.html
             cd /home/circleci/project/test-output/HtmlReport
             cat ExtentHtml.html
             ls
