@@ -37,7 +37,8 @@ jobs:
       - run:
           name: Modify report CSS
           command: |
-            cd /home/circleci/project/test-output
+            cd /home/circleci/project/test-output/HtmlReport
+            cat ExtentHtml.html
             ls
       - store_artifacts:
           path: test-output/HtmlReport
