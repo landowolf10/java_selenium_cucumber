@@ -1,6 +1,5 @@
 package utils;
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,7 +11,7 @@ import java.time.Duration;
 
 import static utils.ConstantData.chromeInstanceExists;
 
-public class Clients
+public class SetUp
 {
     WebDriver driver;
     public static WebDriverWait wait;
@@ -31,9 +30,9 @@ public class Clients
 
         chromeInstanceExists = true;
         ConstantData.chromeDriverInstance = driver;
-        Clients.browser = browser;
+        SetUp.browser = browser;
 
-        System.out.println("Browser: " + Clients.browser);
+        System.out.println("Browser: " + SetUp.browser);
 
         return driver;
     }
@@ -52,7 +51,7 @@ public class Clients
             ChromeOptions chromeOptions = new ChromeOptions();
             //chromeOptions.setCapability("browserVersion", "114.0.5735.90");
             chromeOptions.addArguments("--remote-allow-origins=*");
-            chromeOptions.addArguments("--headless");
+            //chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
         }
         else if (browser.equalsIgnoreCase("Firefox")) {
@@ -62,7 +61,7 @@ public class Clients
                 System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.addArguments("--headless");
+            //firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
 

@@ -4,11 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.CheckoutPage;
-import utils.Clients;
+import utils.SetUp;
 
 public class CheckoutSteps
 {
-    CheckoutPage checkout = new CheckoutPage(Clients.browser);
+    CheckoutPage checkout = new CheckoutPage(SetUp.browser);
 
     @And("checkout information")
     public void checkoutInfo()

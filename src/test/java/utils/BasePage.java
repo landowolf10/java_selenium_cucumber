@@ -14,15 +14,15 @@ import java.util.List;
 public class BasePage {
     protected static WebDriver chromeDriver;
     private static Actions action;
-    Clients clients = new Clients();
+    SetUp setUp = new SetUp();
 
     public BasePage(String browser) {
-        chromeDriver = clients.getDriver(browser);
+        chromeDriver = setUp.getDriver(browser);
     }
 
     private WebElement getElementBy(By elementLocator)
     {
-        return Clients.wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        return SetUp.wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
     }
 
     public List<WebElement> getAllElementsBy(By elementLocator)

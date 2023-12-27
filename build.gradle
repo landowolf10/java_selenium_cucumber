@@ -20,7 +20,6 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
     implementation group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
     implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.14.0'
-    testImplementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.24.0'
 }
 
 test {

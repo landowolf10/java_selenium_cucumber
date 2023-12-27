@@ -5,10 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.LoginPage;
-import utils.Clients;
+import utils.SetUp;
 
 public class LoginSteps {
-    LoginPage loginPage = new LoginPage(Clients.browser);
+    LoginPage loginPage = new LoginPage(SetUp.browser);
 
     @When("^type the username (.*) with password (.*)$")
     public void typeCredentials(String user, String password) {

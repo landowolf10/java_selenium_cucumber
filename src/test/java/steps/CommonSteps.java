@@ -5,7 +5,7 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import pages.LoginPage;
-import utils.Clients;
+import utils.SetUp;
 
 import static utils.TakeScreenShot.takeScreenShot;
 
@@ -20,7 +20,7 @@ public class CommonSteps {
 
     @After
     public void closeDriver() {
-        Clients.quitDriver();
+        SetUp.quitDriver();
     }
 
     @AfterStep

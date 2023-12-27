@@ -2,10 +2,10 @@ package steps;
 
 import io.cucumber.java.en.And;
 import pages.DashboardPage;
-import utils.Clients;
+import utils.SetUp;
 
 public class DashboardSteps {
-    DashboardPage dashboardPage = new DashboardPage(Clients.browser);
+    DashboardPage dashboardPage = new DashboardPage(SetUp.browser);
 
     @And("sort products from most expensive to cheapest")
     public void sortProduct()
