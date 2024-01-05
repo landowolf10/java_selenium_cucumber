@@ -37,15 +37,3 @@ test {
     maxParallelForks = 10 // Adjust the number of parallel forks as needed
     forkEvery = 1
 }
-
-// Task to generate the Allure report
-task generateAllureReport(type: Test) {
-    useJUnitPlatform()
-    finalizedBy 'allureReport'
-}
-
-// Define the Allure report task
-task allureReport(type: Exec) {
-    dependsOn generateAllureReport
-    commandLine 'allure', 'generate', '--clean', '-o', "$buildDir/allure-results", '--results-directory', "$buildDir/test-results"
-}

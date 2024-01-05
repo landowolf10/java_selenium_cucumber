@@ -9,27 +9,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static utils.ConstantData.chromeInstanceExists;
-
 public class SetUp
 {
     WebDriver driver;
     public static WebDriverWait wait;
     public static String browser;
+    public static boolean driverInstanceExists = false;
+    public static WebDriver driverInstance = null;
 
     public WebDriver getDriver(String browser)
     {
-
-
-        if (chromeInstanceExists) {
-            driver = ConstantData.chromeDriverInstance;
+        if (driverInstanceExists) {
+            driver = driverInstance;
         }
         else {
             driver = createDriver(browser);
         }
 
-        chromeInstanceExists = true;
-        ConstantData.chromeDriverInstance = driver;
+        driverInstanceExists = true;
+        driverInstance = driver;
         SetUp.browser = browser;
 
         System.out.println("Browser: " + SetUp.browser);
@@ -74,13 +72,13 @@ public class SetUp
     public static void quitDriver() {
         WebDriver currentChromeDriver;
 
-        if (chromeInstanceExists)
+        if (driverInstanceExists)
         {
-            currentChromeDriver = ConstantData.chromeDriverInstance;
+            currentChromeDriver = driverInstance;
             currentChromeDriver.quit();
         }
 
-        chromeInstanceExists = false;
-        ConstantData.chromeDriverInstance = null;
+        driverInstanceExists = false;
+        driverInstance = null;
     }
 }
