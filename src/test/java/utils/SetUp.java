@@ -49,7 +49,7 @@ public class SetUp
             ChromeOptions chromeOptions = new ChromeOptions();
             //chromeOptions.setCapability("browserVersion", "114.0.5735.90");
             chromeOptions.addArguments("--remote-allow-origins=*");
-            //chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
         }
         else if (browser.equalsIgnoreCase("Firefox")) {
@@ -59,7 +59,7 @@ public class SetUp
                 System.setProperty("webdriver.gecko.driver", ConstantData.geckoDriverPathLinux);
 
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            //firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
