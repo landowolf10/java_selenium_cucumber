@@ -14,6 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
@@ -24,7 +25,11 @@ jobs:
     - name: Grant execute permission to Gradle wrapper
       run: chmod +x ./gradlew
 
-    # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
+    # Ensure executable permission for ChromeDriver binary
+    - name: Grant execute permission to ChromeDriver
+      run: chmod +x ./src/test/resources/drivers/chromedriver
+
+    # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
@@ -33,13 +38,13 @@ jobs:
       run: ./gradlew clean test --tests LoginRunner
 
   dependency-submission:
-
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
@@ -49,6 +54,10 @@ jobs:
     # Ensure executable permission for Gradle wrapper script
     - name: Grant execute permission to Gradle wrapper
       run: chmod +x ./gradlew
+
+    # Ensure executable permission for ChromeDriver binary
+    - name: Grant execute permission to ChromeDriver
+      run: chmod +x ./src/test/resources/drivers/chromedriver
 
     # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
     # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
