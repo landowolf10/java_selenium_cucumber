@@ -10,7 +10,7 @@ import utils.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {
-                //"src/test/resources/features/login/login.feature",
+                ///"src/test/resources/features/login/login.feature",
                 //"src/test/resources/features/login/invalid_login.feature",
                 "src/test/resources/features/checkout/checkout.feature"
         },
