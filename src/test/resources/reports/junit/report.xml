@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="40.257">
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow" time="5.372">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-And sort products from most expensive to cheapest...........................passed
-And add product to the cart.................................................passed
-And add product to the cart.................................................passed
-And checkout information....................................................passed
-Then finish checkout........................................................passed
-]]></system-out>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="36.663">
+    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow" time="2.401">
+        <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119&#10;Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe &#10;Host info: host: 'LANDO', ip: '192.168.0.2'&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[Given I navigate to SauceLab demo page Chrome...............................failed
+When type the username standard_user with password secret_sauce.............skipped
+And press the login button..................................................skipped
+And sort products from most expensive to cheapest...........................skipped
+And add product to the cart.................................................skipped
+And add product to the cart.................................................skipped
+And checkout information....................................................skipped
+Then finish checkout........................................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119
+Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'LANDO', ip: '192.168.0.2'
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:159)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at utils.SetUp.createDriver(SetUp.java:53)
+	at utils.SetUp.getDriver(SetUp.java:26)
+	at utils.BasePage.<init>(BasePage.java:20)
+	at pages.LoginPage.<init>(LoginPage.java:16)
+	at steps.CommonSteps.navigate(CommonSteps.java:17)
+	at ✽.I navigate to SauceLab demo page Chrome(file:///C:/Users/orlan/Documents/Projects/Automation/Selenium/java_selenium_cucumber/src/test/resources/features/checkout/checkout.feature:3)
+]]></failure>
     </testcase>
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow 2" time="8.52">
+    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow 2" time="9.617">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
@@ -22,42 +50,126 @@ And checkout information....................................................pass
 Then finish checkout........................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user" time="3.4">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_use with password secret_sauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
+    <testcase classname="Invalid user login" name="Invalid user" time="1.196">
+        <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119&#10;Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe &#10;Host info: host: 'LANDO', ip: '192.168.0.2'&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[Given I navigate to SauceLab demo page Chrome...............................failed
+When type the username standard_use with password secret_sauce..............skipped
+And press the login button..................................................skipped
+Then verify user login was not successful...................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119
+Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'LANDO', ip: '192.168.0.2'
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:159)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at utils.SetUp.createDriver(SetUp.java:53)
+	at utils.SetUp.getDriver(SetUp.java:26)
+	at utils.BasePage.<init>(BasePage.java:20)
+	at pages.LoginPage.<init>(LoginPage.java:16)
+	at steps.CommonSteps.navigate(CommonSteps.java:17)
+	at ✽.I navigate to SauceLab demo page Chrome(file:///C:/Users/orlan/Documents/Projects/Automation/Selenium/java_selenium_cucumber/src/test/resources/features/login/invalid_login.feature:3)
+]]></failure>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 2" time="2.379">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secretsauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
+    <testcase classname="Invalid user login" name="Invalid user 2" time="1.172">
+        <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119&#10;Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe &#10;Host info: host: 'LANDO', ip: '192.168.0.2'&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[Given I navigate to SauceLab demo page Chrome...............................failed
+When type the username standard_user with password secretsauce..............skipped
+And press the login button..................................................skipped
+Then verify user login was not successful...................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119
+Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'LANDO', ip: '192.168.0.2'
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:159)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at utils.SetUp.createDriver(SetUp.java:53)
+	at utils.SetUp.getDriver(SetUp.java:26)
+	at utils.BasePage.<init>(BasePage.java:20)
+	at pages.LoginPage.<init>(LoginPage.java:16)
+	at steps.CommonSteps.navigate(CommonSteps.java:17)
+	at ✽.I navigate to SauceLab demo page Chrome(file:///C:/Users/orlan/Documents/Projects/Automation/Selenium/java_selenium_cucumber/src/test/resources/features/login/invalid_login.feature:3)
+]]></failure>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 3" time="5.641">
+    <testcase classname="Invalid user login" name="Invalid user 3" time="7.879">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_use with password secret_sauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 4" time="5.949">
+    <testcase classname="Invalid user login" name="Invalid user 4" time="7.879">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secretsauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="2.616">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-Then verify that the user successfully logged in............................passed
-]]></system-out>
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="0.932">
+        <failure message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119&#10;Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe &#10;Host info: host: 'LANDO', ip: '192.168.0.2'&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[Given I navigate to SauceLab demo page Chrome...............................failed
+When type the username standard_user with password secret_sauce.............skipped
+And press the login button..................................................skipped
+Then verify that the user successfully logged in............................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 119
+Current browser version is 122.0.6261.112 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'LANDO', ip: '192.168.0.2'
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:159)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at utils.SetUp.createDriver(SetUp.java:53)
+	at utils.SetUp.getDriver(SetUp.java:26)
+	at utils.BasePage.<init>(BasePage.java:20)
+	at pages.LoginPage.<init>(LoginPage.java:16)
+	at steps.CommonSteps.navigate(CommonSteps.java:17)
+	at ✽.I navigate to SauceLab demo page Chrome(file:///C:/Users/orlan/Documents/Projects/Automation/Selenium/java_selenium_cucumber/src/test/resources/features/login/login.feature:4)
+]]></failure>
     </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app 2" time="6.049">
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app 2" time="5.27">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
