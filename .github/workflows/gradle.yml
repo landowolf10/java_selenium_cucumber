@@ -29,6 +29,10 @@ jobs:
     - name: Grant execute permission to ChromeDriver
       run: chmod +x ./src/test/resources/drivers/chromedriver
 
+      # Ensure executable permission for GeckoDriver binary
+    - name: Grant execute permission to GeckoDriver
+      run: chmod +x ./src/test/resources/drivers/geckodriver
+
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
