@@ -1,8 +1,4 @@
 version: 2.1
-executors:
-  default:
-    docker:
-      - image: circleci/openjdk:17-buster-node-browsers
 jobs:
   build:
     docker:
