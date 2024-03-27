@@ -1,64 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="41.115">
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow" time="8.924">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="34.807">
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="33.604">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-And sort products from most expensive to cheapest...........................passed
-And add product to the cart.................................................passed
-And add product to the cart.................................................passed
-And checkout information....................................................passed
-Then finish checkout........................................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow 2" time="10.48">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-And sort products from most expensive to cheapest...........................passed
-And add product to the cart.................................................passed
-And add product to the cart.................................................passed
-And checkout information....................................................passed
-Then finish checkout........................................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Invalid user login" name="Invalid user" time="2.514">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_use with password secret_sauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 2" time="2.147">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secretsauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 3" time="5.02">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
-When type the username standard_use with password secret_sauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 4" time="4.553">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
-When type the username standard_user with password secretsauce..............passed
-And press the login button..................................................passed
-Then verify user login was not successful...................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="2.38">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-Then verify that the user successfully logged in............................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app 2" time="4.911">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
 Then verify that the user successfully logged in............................passed
