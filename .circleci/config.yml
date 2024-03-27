@@ -6,7 +6,9 @@ jobs:
     steps:
       - run:
           name: Run Selenium Tests
-          command: ./gradlew clean test --tests LoginRunner
+          command: |
+            chmod +x gradlew
+            ./gradlew clean test --tests LoginRunner
       - run:
           name: Modify report CSS
           command: |
