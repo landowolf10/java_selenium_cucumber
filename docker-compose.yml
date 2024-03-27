@@ -13,7 +13,7 @@ services:
     depends_on:
       - hub
     deploy:
-      replicas: 2
+      replicas: 1
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -24,7 +24,7 @@ services:
     depends_on:
       - hub
     deploy:
-      replicas: 0
+      replicas: 1
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442

@@ -17,7 +17,7 @@ public class BasePage {
     SetUp setUp = new SetUp();
 
     public BasePage(String browser) {
-        driver = setUp.getDriver(browser, false);
+        driver = setUp.getDriver(browser, true);
     }
 
     private WebElement getElementBy(By elementLocator, int maxWaitSec)
