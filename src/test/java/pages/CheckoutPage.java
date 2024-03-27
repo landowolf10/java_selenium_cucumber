@@ -17,17 +17,17 @@ public class CheckoutPage extends BasePage
 
     public void proceedWithCheckout()
     {
-        clickElement(By.xpath(cartIcon));
-        clickElement(By.xpath(checkoutButton));
-        writeText(By.xpath(txtFirstName), "Orlando");
-        writeText(By.xpath(txtLastName), "Avila");
-        writeText(By.xpath(txtZipCode), "40880");
-        clickElement(By.xpath(continueButton));
+        clickElement(By.xpath(cartIcon), 10);
+        clickElement(By.xpath(checkoutButton), 10);
+        writeText(By.xpath(txtFirstName), "Orlando", 10);
+        writeText(By.xpath(txtLastName), "Avila", 10);
+        writeText(By.xpath(txtZipCode), "40880", 10);
+        clickElement(By.xpath(continueButton), 10);
     }
 
     public String getSubtotal()
     {
-        return getElementText(By.xpath(subtotal));
+        return getElementText(By.xpath(subtotal), 10);
     }
 
     public HashMap<String, Boolean> getCheckoutElements()
@@ -35,9 +35,9 @@ public class CheckoutPage extends BasePage
         HashMap<String, Boolean> presentElements = new HashMap<>();
 
         try {
-            presentElements.put("order_title", elementIsDisplayed(By.xpath(orderTitle)));
-            presentElements.put("order_message", elementIsDisplayed(By.xpath(orderMessage)));
-            presentElements.put("home_button", elementIsDisplayed(By.xpath(backToHomeButton)));
+            presentElements.put("order_title", elementIsDisplayed(By.xpath(orderTitle), 10));
+            presentElements.put("order_message", elementIsDisplayed(By.xpath(orderMessage), 10));
+            presentElements.put("home_button", elementIsDisplayed(By.xpath(backToHomeButton), 10));
         }
         catch (TimeoutException e) {
             presentElements.put("order_title", false);
@@ -60,6 +60,6 @@ public class CheckoutPage extends BasePage
 
     public void clickFinishButton() {
         getSelectedItemAccess().clear();
-        clickElement(By.xpath(finishButton));
+        clickElement(By.xpath(finishButton), 10);
     }
 }

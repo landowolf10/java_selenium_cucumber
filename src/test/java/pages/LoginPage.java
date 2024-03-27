@@ -21,12 +21,12 @@ public class LoginPage extends BasePage {
     }
 
     public void clickLoginButton() {
-        clickElement(By.xpath(loginButton));
+        clickElement(By.xpath(loginButton), 10);
     }
 
     public void writeCredentials(String email, String password) {
-        writeText(By.xpath(userTextbox), email);
-        writeText(By.xpath(passwordTextbox), password);
+        writeText(By.xpath(userTextbox), email, 10);
+        writeText(By.xpath(passwordTextbox), password, 10);
     }
 
     public HashMap<String, Boolean> getValidLoginElements()
@@ -34,8 +34,8 @@ public class LoginPage extends BasePage {
         HashMap<String, Boolean> presentElements = new HashMap<>();
 
         try {
-            presentElements.put("cart_icon", elementIsDisplayed(By.xpath(cartIcon)));
-            presentElements.put("drop_down", elementIsDisplayed(By.xpath(sortDropDown)));
+            presentElements.put("cart_icon", elementIsDisplayed(By.xpath(cartIcon), 10));
+            presentElements.put("drop_down", elementIsDisplayed(By.xpath(sortDropDown), 10));
         }
         catch (TimeoutException e) {
             presentElements.put("cart_icon", false);
@@ -50,14 +50,14 @@ public class LoginPage extends BasePage {
     {
         HashMap<String, Boolean> presentElements = new HashMap<>();
 
-        presentElements.put("login_button", elementIsDisplayed(By.xpath(loginButton)));
-        presentElements.put("error_message", elementIsDisplayed(By.xpath(errorMessage)));
+        presentElements.put("login_button", elementIsDisplayed(By.xpath(loginButton), 10));
+        presentElements.put("error_message", elementIsDisplayed(By.xpath(errorMessage), 10));
 
         return presentElements;
     }
 
 
     public String getErrorMessageText() {
-        return getElementText(By.xpath(errorMessage));
+        return getElementText(By.xpath(errorMessage), 10);
     }
 }

@@ -12,34 +12,36 @@ import java.time.Duration;
 import java.util.List;
 
 public class BasePage {
-    protected static WebDriver chromeDriver;
+    protected static WebDriver driver;
     private static Actions action;
     SetUp setUp = new SetUp();
 
     public BasePage(String browser) {
-        chromeDriver = setUp.getDriver(browser);
+        driver = setUp.getDriver(browser, false);
     }
 
-    private WebElement getElementBy(By elementLocator)
+    private WebElement getElementBy(By elementLocator, int maxWaitSec)
     {
-        return SetUp.wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxWaitSec));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
     }
 
     public List<WebElement> getAllElementsBy(By elementLocator)
     {
-        return chromeDriver.findElements(elementLocator);
+        return driver.findElements(elementLocator);
     }
 
     public void navigateTo(String url) {
-        chromeDriver.get(url);
+        driver.get(url);
     }
 
     public void goToLinkText(String linkText) {
-        chromeDriver.findElement(By.linkText(linkText));
+        driver.findElement(By.linkText(linkText));
     }
 
-    public void clickElement(By elementLocator) {
-        getElementBy(elementLocator).click();
+    public void clickElement(By elementLocator, int maxWaitSec) {
+        getElementBy(elementLocator, maxWaitSec).click();
     }
 
     public void clickElementFromList(WebElement element)
@@ -47,83 +49,83 @@ public class BasePage {
         element.click();
     }
 
-    public void writeText(By elementLocator, String text) {
-        getElementBy(elementLocator).clear();
-        getElementBy(elementLocator).sendKeys(text);
+    public void writeText(By elementLocator, String text, int maxWaitSec) {
+        getElementBy(elementLocator, maxWaitSec).clear();
+        getElementBy(elementLocator, maxWaitSec).sendKeys(text);
     }
 
-    public String getElementText(By elementLocator) {
-        return getElementBy(elementLocator).getText();
+    public String getElementText(By elementLocator, int maxWaitSec) {
+        return getElementBy(elementLocator, maxWaitSec).getText();
     }
 
-    public void selectFromDropDownByValue(By elementLocator, String valueToSelect) {
-        Select dropdown = new Select(getElementBy(elementLocator));
+    public void selectFromDropDownByValue(By elementLocator, String valueToSelect, int maxWaitSec) {
+        Select dropdown = new Select(getElementBy(elementLocator, maxWaitSec));
         dropdown.selectByValue(valueToSelect);
     }
 
-    public void selectFromDropDownByIndex(By elementLocator, int valueToSelect) {
-        Select dropdown = new Select(getElementBy(elementLocator));
+    public void selectFromDropDownByIndex(By elementLocator, int valueToSelect, int maxWaitSec) {
+        Select dropdown = new Select(getElementBy(elementLocator, maxWaitSec));
         dropdown.selectByIndex(valueToSelect);
     }
 
-    public void selectFromDropDownByText(By elementLocator, String valueToSelect) {
-        Select dropdown = new Select(getElementBy(elementLocator));
+    public void selectFromDropDownByText(By elementLocator, String valueToSelect, int maxWaitSec) {
+        Select dropdown = new Select(getElementBy(elementLocator, maxWaitSec));
         dropdown.selectByVisibleText(valueToSelect);
     }
 
-    public void hoverOverElement(By elementLocator) {
-        action.moveToElement(getElementBy(elementLocator));
+    public void hoverOverElement(By elementLocator, int maxWaitSec) {
+        action.moveToElement(getElementBy(elementLocator, maxWaitSec));
     }
 
-    public void doubleClick(By elementLocator) {
-        action.doubleClick(getElementBy(elementLocator));
+    public void doubleClick(By elementLocator, int maxWaitSec) {
+        action.doubleClick(getElementBy(elementLocator, maxWaitSec));
     }
 
-    public void rightClick(By elementLocator) {
-        action.contextClick(getElementBy(elementLocator));
+    public void rightClick(By elementLocator, int maxWaitSec) {
+        action.contextClick(getElementBy(elementLocator, maxWaitSec));
     }
 
-    public String getValueFromTable(By elementLocator, int row, int column) {
+    public String getValueFromTable(By elementLocator, int row, int column, int maxWaitSec) {
         String cell = elementLocator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
 
         System.out.print("Cell locator: " + cell);
 
-        return getElementBy(By.xpath(cell)).getText();
+        return getElementBy(By.xpath(cell), maxWaitSec).getText();
     }
 
-    public void setValueOnTable(By elementLocator, int row, int column, String value) {
+    public void setValueOnTable(By elementLocator, int row, int column, String value, int maxWaitSec) {
         String cell = elementLocator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
 
-        getElementBy(By.xpath(cell)).sendKeys(value);
+        getElementBy(By.xpath(cell), maxWaitSec).sendKeys(value);
     }
 
     public void switchToiFrame(int iFrameIndex) {
-        chromeDriver.switchTo().frame(iFrameIndex);
+        driver.switchTo().frame(iFrameIndex);
     }
 
     public void switchToParentFrame() {
-        chromeDriver.switchTo().parentFrame();
+        driver.switchTo().parentFrame();
     }
 
     public void dismissAlert() {
-        chromeDriver.switchTo().alert().dismiss();
+        driver.switchTo().alert().dismiss();
     }
 
     public void waitUntilElementLocated(By locatorType, int maxWaitSec) {
-        WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(maxWaitSec));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(maxWaitSec));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(locatorType));
     }
 
-    public boolean elementIsDisplayed(By locatorType) {
-        return getElementBy(locatorType).isDisplayed();
+    public boolean elementIsDisplayed(By locatorType, int maxWaitSec) {
+        return getElementBy(locatorType, maxWaitSec).isDisplayed();
     }
 
-    public boolean elementIsSelected(By locatorType) {
-        return getElementBy(locatorType).isSelected();
+    public boolean elementIsSelected(By locatorType, int maxWaitSec) {
+        return getElementBy(locatorType, maxWaitSec).isSelected();
     }
 
-    public boolean elementIsEnabled(By locatorType) {
-        return getElementBy(locatorType).isEnabled();
+    public boolean elementIsEnabled(By locatorType, int maxWaitSec) {
+        return getElementBy(locatorType, maxWaitSec).isEnabled();
     }
 }

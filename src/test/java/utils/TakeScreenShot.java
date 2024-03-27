@@ -15,7 +15,7 @@ public class TakeScreenShot extends BasePage{
 
         if (scenario.isFailed())
         {
-            final byte[] screenshot = ((TakesScreenshot) chromeDriver).getScreenshotAs(OutputType.BYTES);
+            final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 
             scenario.attach(screenshot, "image/png", "Screenshot");
         }

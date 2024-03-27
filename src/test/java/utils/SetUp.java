@@ -1,81 +1,97 @@
 package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
-public class SetUp
-{
+public class SetUp {
     WebDriver driver;
-    public static WebDriverWait wait;
+    private static boolean driverInstanceExists = false;
+    private static WebDriver driverInstance = null;
     public static String browser;
-    public static boolean driverInstanceExists = false;
-    public static WebDriver driverInstance = null;
+    private final String os = System.getProperty("os.name");
 
-    public WebDriver getDriver(String browser)
-    {
-        if (driverInstanceExists) {
+    public WebDriver getDriver(String browser, boolean isSeleniumGridEnabled) {
+        if (driverInstanceExists)
             driver = driverInstance;
-        }
-        else {
-            driver = createDriver(browser);
-        }
+        else
+            if (isSeleniumGridEnabled)
+                driver = createRemoteDriver(browser);
+            else
+                driver = createDriver(browser);
 
         driverInstanceExists = true;
         driverInstance = driver;
         SetUp.browser = browser;
 
-        System.out.println("Browser: " + SetUp.browser);
-
         return driver;
     }
 
-    private WebDriver createDriver(String browser)
-    {
-        String os = System.getProperty("os.name");
+    private WebDriver createRemoteDriver(String browser) {
+        Capabilities capabilities = null;
+
         System.out.println("OS: " + os);
 
-        if (browser.equalsIgnoreCase("Chrome")) {
-            if (os.contains("Windows"))
-                System.setProperty("webdriver.chrome.driver", ConstantData.chromeDriverPathWindows);
-            else if (os.contains("Linux"))
-                System.setProperty("webdriver.chrome.driver", ConstantData.chromeDriverPathLinux);
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            //chromeOptions.addArguments("--remote-allow-origins=*");
+            //chromeOptions.addArguments("--headless=new");
+            capabilities = new ChromeOptions();
+        }
+        else if (browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            //firefoxOptions.addArguments("--headless");
+            capabilities = new FirefoxOptions();
+        }
 
+        try {
+            assert capabilities != null;
+            return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private WebDriver createDriver(String browser) {
+        System.out.println("OS: " + os);
+
+
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
-            //chromeOptions.setCapability("browserVersion", "114.0.5735.90");
-            chromeOptions.addArguments("--remote-allow-origins=*");
-            chromeOptions.addArguments("--headless");
+            //chromeOptions.addArguments("--remote-allow-origins=*");
+            //chromeOptions.addArguments("--headless=new");
             driver = new ChromeDriver(chromeOptions);
         }
-        else if (browser.equalsIgnoreCase("Firefox")) {
-            if (os.contains("Windows"))
-                System.setProperty("webdriver.gecko.driver", ConstantData.geckoDriverPathWindows);
-            else if (os.contains("Linux"))
-                System.setProperty("webdriver.gecko.driver", ConstantData.geckoDriverPathLinux);
-
+        else if (browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.addArguments("--headless");
+            //firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         return driver;
     }
 
     public static void quitDriver() {
-        WebDriver currentChromeDriver;
+        WebDriver currentDriver;
 
         if (driverInstanceExists)
         {
-            currentChromeDriver = driverInstance;
-            currentChromeDriver.quit();
+            currentDriver = driverInstance;
+            currentDriver.quit();
         }
 
         driverInstanceExists = false;

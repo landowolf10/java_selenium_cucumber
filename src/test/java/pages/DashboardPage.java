@@ -17,7 +17,7 @@ public class DashboardPage extends BasePage {
     }
 
     public void sortDropdown() {
-        selectFromDropDownByText(By.xpath(sortDropDown), "Price (high to low)");
+        selectFromDropDownByText(By.xpath(sortDropDown), "Price (high to low)", 10);
     }
 
     private List<Float> getPrices()
