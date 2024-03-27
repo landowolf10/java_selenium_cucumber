@@ -11,8 +11,6 @@ public class TakeScreenShot extends BasePage{
 
     public static void takeScreenShot(Scenario scenario)
     {
-        //BasePage basePage = new BasePage(Clients.browser);
-
         if (scenario.isFailed())
         {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);

@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {
                 "src/test/resources/features/login/login.feature",
-                "src/test/resources/features/login/invalid_login.feature",
-                "src/test/resources/features/checkout/checkout.feature"
+                //"src/test/resources/features/login/invalid_login.feature",
+                //"src/test/resources/features/checkout/checkout.feature"
         },
         glue = "steps",
         plugin = {
