@@ -76,7 +76,7 @@ public class SetUp {
         else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            //firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
 
