@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="34.807">
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="33.604">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.459">
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="5.323">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
