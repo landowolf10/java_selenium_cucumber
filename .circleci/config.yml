@@ -4,12 +4,12 @@ jobs:
     docker:
       - image: circleci/openjdk:17-buster-node-browsers
     steps:
-      - run:
-          name: Install Dependencies
-          command: chmod +x gradlew
+      - checkout
       - run:
           name: Run Selenium Tests
-          command: ./gradlew clean test --tests LoginRunner
+          command: |
+            chmod +x gradlew
+            ./gradlew clean test --tests LoginRunner
       - run:
           name: Modify report CSS
           command: |
