@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="67.746">
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow" time="10.386">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="39.855">
+    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow" time="15.346">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
@@ -11,53 +11,81 @@ And checkout information....................................................pass
 Then finish checkout........................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow 2" time="14.568">
-        <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
-When type the username standard_user with password secret_sauce.............passed
-And press the login button..................................................passed
-And sort products from most expensive to cheapest...........................passed
-And add product to the cart.................................................passed
-And add product to the cart.................................................passed
-And checkout information....................................................passed
-Then finish checkout........................................................passed
-]]></system-out>
+    <testcase classname="Validate checkout flow on SwagLabs page" name="Validate checkout flow 2" time="1.034">
+        <failure message="Could not start a new session. Response code 500. Message: Process unexpectedly closed with status 0 &#10;Host info: host: 'LANDO', ip: '192.168.0.3'&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--headless]}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[Given I navigate to SauceLab demo page Firefox..............................failed
+When type the username standard_user with password secret_sauce.............skipped
+And press the login button..................................................skipped
+And sort products from most expensive to cheapest...........................skipped
+And add product to the cart.................................................skipped
+And add product to the cart.................................................skipped
+And checkout information....................................................skipped
+Then finish checkout........................................................skipped
+
+StackTrace:
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Process unexpectedly closed with status 0 
+Host info: host: 'LANDO', ip: '192.168.0.3'
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {args: [--headless]}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:159)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:156)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:151)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:132)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:127)
+	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:112)
+	at utils.SetUp.createDriver(SetUp.java:80)
+	at utils.SetUp.getDriver(SetUp.java:31)
+	at utils.BasePage.<init>(BasePage.java:20)
+	at pages.LoginPage.<init>(LoginPage.java:16)
+	at steps.CommonSteps.navigate(CommonSteps.java:17)
+	at ✽.I navigate to SauceLab demo page Firefox(file:///C:/Users/orlan/Documents/Projects/Automation/Selenium/java_selenium_cucumber/src/test/resources/features/checkout/checkout.feature:3)
+]]></failure>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user" time="2.52">
+    <testcase classname="Invalid user login" name="Invalid user" time="3.532">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
 When type the username standard_use with password secret_sauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 2" time="2.101">
+    <testcase classname="Invalid user login" name="Invalid user 2" time="3.697">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
 When type the username standard_user with password secretsauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 3" time="5.727">
+    <testcase classname="Invalid user login" name="Invalid user 3" time="4.14">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_use with password secret_sauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Invalid user login" name="Invalid user 4" time="5.318">
+    <testcase classname="Invalid user login" name="Invalid user 4" time="4.521">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secretsauce..............passed
 And press the login button..................................................passed
 Then verify user login was not successful...................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="1.94">
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app" time="3.571">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Chrome...............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed
 Then verify that the user successfully logged in............................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app 2" time="24.875">
+    <testcase classname="Successful login" name="Validate successful login to Sauce Lab demo app 2" time="3.792">
         <system-out><![CDATA[Given I navigate to SauceLab demo page Firefox..............................passed
 When type the username standard_user with password secret_sauce.............passed
 And press the login button..................................................passed

@@ -70,7 +70,7 @@ public class SetUp {
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             //chromeOptions.addArguments("--remote-allow-origins=*");
-            chromeOptions.addArguments("--headless=new");
+            chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
         }
         else if (browser.equalsIgnoreCase("firefox")) {
